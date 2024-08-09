@@ -81,3 +81,16 @@ main
     elif(escolha2 == 2):
         print("Até Logo!")
         i = True
+def regra_de_tres(a, b, c):
+    if a == 0:
+        raise ValueError("O valor de 'a' não pode ser zero.")
+    
+    x = (b * c) / a
+    return x
+
+a = int(input("Primeiro Número: "))
+b = int(input("Segundo Número: "))
+c = int(input("Terceiro Número: "))
+
+resultado = regra_de_tres(a, b, c)
+print(f"O valor de X é: {resultado}")
