@@ -1,15 +1,5 @@
 import os
-  def erro():
-    while True:
-        try:
-            escolha = int(input("Escolha uma operação(1/2/3/4/5): "))
-            n1 = float(input("Digite o primeiro número: "))                
-            n2 = float(input("Digite o segundo número: "))
-            break
-        except ValueError:
-            print("Opção inválida. Por favor, escolha uma operação válida.")
-i = False
-while (i == False):
+while True:
     print("Calculadora Simples")
     print()
     print("Operações:")
@@ -17,47 +7,58 @@ while (i == False):
     print("2. Subtração")
     print("3. Multiplicação")
     print("4. Divisão")
-    print("5. Sair")
-    erro()
-    if (escolha == 5):
+    print("5. Potência")
+    print("6. Sair")
+    while True:
+        try:
+            escolha = int(input("Escolha uma operação(1/2/3/4/5): "))
+            n1 = float(input("Digite o primeiro número: "))
+            n2 = float(input("Digite o segundo número: "))
+            break
+        except ValueError:
+            print("Opção inválida. Por favor, escolha uma operação válida.")
+    if(escolha == 6):
         print("Até Logo!")
         break
-    elif (escolha not in (1, 2, 3, 4)):
+    elif(escolha not in (1,2,3,4,5)):
         print("Escolha inválida!")
         continue
     resultado = 0
     simbolo = "a"
-    if escolha in [1, 2, 3, 4]:
-        if (escolha == 1):
+    if escolha in [1, 2, 3, 4, 5]:
+        if(escolha == 1):
             resultado = n1 + n2
             simbolo = "+"
-        elif (escolha == 2):
+        elif(escolha == 2):
             resultado = n1 - n2
             simbolo = "-"
-        elif (escolha == 3):
+        elif(escolha == 3):
             resultado = n1 * n2
             simbolo = "*"
-        elif (escolha == 4):
+        elif(escolha == 4):
             resultado = n1 / n2
             simbolo = "/"
-            if (n1 or n2 != 0):
+            if(n1 or n2 != 0):
                 resultado = n1 / n2
                 simbolo = "/"
                 print("{} {} {} = {}".format(n1, simbolo, n2, resultado))
             else:
                 print("Não é possível dividir por zero!")
+        elif(escolha == 5):
+            resultado = n1 ** n2
+            simbolo = "**"
+            print("{} {} {} = {:.3f}".format(n1, simbolo, n2, resultado))
     else:
-        print("Opção inválida!")
-    if (escolha > 0 and escolha < 4):
+        print("Opção inválida!")        
+    if(escolha > 0 and escolha < 5):
         print("{} {} {} = {}".format(n1, simbolo, n2, resultado))
     print("Deseja continuar?")
     print("1. Sim")
     print("2. Não")
     escolha2 = int(input("Resposta(1/2): "))
-    if (escolha2 == 1):
+    if(escolha2 == 1):
         input("Pressione Enter para continuar...")
         os.system('clear')
-    elif (escolha2 == 2):
+    elif(escolha2 == 2):
         print("Até Logo!")
-        i = True
-  
+        break
