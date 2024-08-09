@@ -1,13 +1,13 @@
 import os
-  def erro():
-    while True:
-        try:
-            escolha = int(input("Escolha uma operação(1/2/3/4/5): "))
-            n1 = float(input("Digite o primeiro número: "))                
-            n2 = float(input("Digite o segundo número: "))
-            break
-        except ValueError:
-            print("Opção inválida. Por favor, escolha uma operação válida.")
+def erro():
+  while True:
+    try:
+      escolha = int(input("Escolha uma operação(1/2/3/4/5): "))
+      n1 = float(input("Digite o primeiro número: "))                
+      n2 = float(input("Digite o segundo número: "))
+      break
+    except ValueError:
+      print("Opção inválida. Por favor, escolha uma operação válida.")
 i = False
 while (i == False):
     print("Calculadora Simples")
